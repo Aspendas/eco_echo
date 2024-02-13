@@ -1,5 +1,5 @@
 import 'package:eco_echo/models/wiki/categories.dart';
-import 'package:eco_echo/widgets/wiki/WasteCategoryItem.dart';
+import 'package:eco_echo/widgets/wiki/waste_category_item.dart';
 import 'package:flutter/material.dart';
 
 class WikiScreen extends StatelessWidget {
@@ -29,7 +29,7 @@ class WikiScreen extends StatelessWidget {
           size: 24,
           color: Color(0xff13BD04),
         ),
-        title: "Organics",
+        title: "Plastic",
       ),
       WasteCategories(
         icon: const Icon(

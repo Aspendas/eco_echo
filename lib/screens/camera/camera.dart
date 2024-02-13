@@ -1,8 +1,8 @@
-import 'dart:io';
-
+import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:camera/camera.dart';
+
+import 'display_picture.dart';
 
 class CameraScreen extends StatefulWidget {
   const CameraScreen({
@@ -89,28 +89,11 @@ class CameraScreenState extends State<CameraScreen> {
             );
           } catch (e) {
             // If an error occurs, log the error to the console.
-            print(e);
+            log(e.toString());
           }
         },
         child: const Icon(Icons.camera_alt),
       ),
-    );
-  }
-}
-
-// A widget that displays the picture taken by the user.
-class DisplayPictureScreen extends StatelessWidget {
-  final String imagePath;
-
-  const DisplayPictureScreen({super.key, required this.imagePath});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Display the Picture')),
-      // The image is stored as a file on the device. Use the `Image.file`
-      // constructor with the given path to display the image.
-      body: Image.file(File(imagePath)),
     );
   }
 }

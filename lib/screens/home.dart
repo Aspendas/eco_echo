@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:camera/camera.dart';
-import 'package:eco_echo/screens/camera.dart';
+import 'package:eco_echo/screens/camera/camera.dart';
 import 'package:eco_echo/screens/wiki/wiki_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
     gemini.text("how to recycle a television").then((value) {
       setState(() {
         text = text + (value?.output ?? "");
-        print(text);
+        log(text);
         loading = false;
       });
     }).catchError((e) => log(e));
