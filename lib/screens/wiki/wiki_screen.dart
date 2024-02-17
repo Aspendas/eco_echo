@@ -67,13 +67,20 @@ class WikiScreen extends StatelessWidget {
 
     return ListView(
       children: [
+        Container(
+          margin: EdgeInsets.all(16),
+          height: 120,
+          width: double.infinity,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: const Color(0xffADF5D6)),
+          child: Text("asd"),
+        ),
         const Padding(
           padding: EdgeInsets.all(16.0),
-          child: Center(
-            child: Text(
-              "Categories",
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-            ),
+          child: Text(
+            "Categories",
+            style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
           ),
         ),
         ListView.builder(

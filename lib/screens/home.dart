@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:camera/camera.dart';
 import 'package:eco_echo/screens/camera/camera.dart';
+import 'package:eco_echo/screens/recycle/recycle.dart';
 import 'package:eco_echo/screens/wiki/wiki_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
@@ -77,10 +78,9 @@ class _HomePageState extends State<HomePage> {
         const WikiScreen(),
 
         // Notifications page
-        const Text('Notifications Page'),
+        const RecycleScreen(),
 
         // Messages page
-        const Text('Messages Page'),
       ][currentPageIndex],
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
@@ -104,15 +104,8 @@ class _HomePageState extends State<HomePage> {
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Badge(child: Icon(Icons.notifications_sharp)),
-            label: 'Notifications',
-          ),
-          NavigationDestination(
-            icon: Badge(
-              label: Text('2'),
-              child: Icon(Icons.messenger_sharp),
-            ),
-            label: 'Messages',
+            icon: Icon(Icons.recycling),
+            label: 'Recycle',
           ),
         ],
       ),
