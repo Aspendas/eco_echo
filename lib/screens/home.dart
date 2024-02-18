@@ -21,21 +21,6 @@ class _HomePageState extends State<HomePage> {
   final gemini = Gemini.instance;
   var text = "";
   int currentPageIndex = 0;
-  bool loading = false;
-  submitGemini() {
-    setState(() {
-      text = "";
-      loading = true;
-    });
-    gemini.text("how to recycle a television").then((value) {
-      setState(() {
-        text = text + (value?.output ?? "");
-        log(text);
-        loading = false;
-      });
-    }).catchError((e) => log(e));
-  }
-
   PageController _pageController = PageController();
 
   @override
@@ -65,12 +50,6 @@ class _HomePageState extends State<HomePage> {
             fontSize: 24,
           ),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.person),
-          ),
-        ],
         backgroundColor: const Color.fromRGBO(191, 216, 175, 1),
       ),
       body: [

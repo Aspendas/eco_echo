@@ -4,13 +4,6 @@ import 'package:flutter/material.dart';
 
 class WikiScreen extends StatelessWidget {
   const WikiScreen({super.key});
-// organics,
-//   plastic,
-//   glass,
-//   clothes,
-//   technological,
-//   paper,
-//   metal
 
   @override
   Widget build(BuildContext context) {
