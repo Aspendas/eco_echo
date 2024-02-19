@@ -61,7 +61,7 @@ class WikiScreen extends StatelessWidget {
     return ListView(
       children: [
         Container(
-          margin: EdgeInsets.all(16),
+          margin: const EdgeInsets.all(16),
           height: 120,
           width: double.infinity,
           decoration: BoxDecoration(

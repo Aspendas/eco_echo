@@ -10,7 +10,6 @@ class RecycleScreen extends StatefulWidget {
 }
 
 class _RecycleScreenState extends State<RecycleScreen> {
-  @override
   List<WasteCategories> categoryItems = [
     WasteCategories(
       icon: const Icon(
@@ -280,6 +279,25 @@ class _RecycleScreenState extends State<RecycleScreen> {
                       ),
                     ],
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const SizedBox(),
+                      OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: Colors.black87,
+                          backgroundColor: Colors.green[100],
+                          minimumSize: const Size(72, 36),
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(12)),
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: const Text('Done'),
+                      )
+                    ],
+                  )
                 ],
               )
             ],

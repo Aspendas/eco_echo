@@ -1,4 +1,5 @@
 import 'package:eco_echo/models/wiki/categories.dart';
+import 'package:eco_echo/screens/wiki/detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class WasteCategoryItem extends StatelessWidget {
@@ -12,13 +13,8 @@ class WasteCategoryItem extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => Scaffold(
-              appBar: AppBar(
-                title: Text(categories.title),
-              ),
-              body: Center(
-                child: Text(categories.title),
-              ),
+            builder: (context) => WikiDetailScreen(
+              title: categories.title,
             ),
           ),
         );
@@ -44,9 +40,10 @@ class WasteCategoryItem extends StatelessWidget {
             Text(
               categories.title,
               style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.black),
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+                color: Colors.black,
+              ),
             ),
           ],
         ),

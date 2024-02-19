@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 import 'config.dart';
 import 'models/camera.dart';
 import 'screens/home.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async {
   final CameraDescription firstCamera;
@@ -12,6 +14,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final cameras = await availableCameras();
   firstCamera = cameras.first;
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(
     ChangeNotifierProvider(

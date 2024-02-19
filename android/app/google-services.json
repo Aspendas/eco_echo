@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "465049449506",
+    "project_id": "sc-2024",
+    "storage_bucket": "sc-2024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465049449506:android:ef078023b6d7032e82c67b",
+        "android_client_info": {
+          "package_name": "com.example.eco_echo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwzle58UI6IxEksJivazvIv1cd1WVCeaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
