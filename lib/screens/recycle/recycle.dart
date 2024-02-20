@@ -24,6 +24,7 @@ class _RecycleScreenState extends State<RecycleScreen> {
       ),
       title: "Organics",
       isActive: true,
+      multiplier: 5,
     ),
     WasteCategories(
       icon: const Icon(
@@ -38,6 +39,7 @@ class _RecycleScreenState extends State<RecycleScreen> {
       ),
       title: "Plastic",
       isActive: false,
+      multiplier: 1.5,
     ),
     WasteCategories(
       icon: const Icon(
@@ -52,6 +54,7 @@ class _RecycleScreenState extends State<RecycleScreen> {
       ),
       title: "Glass",
       isActive: false,
+      multiplier: 0.5,
     ),
     WasteCategories(
       icon: const Icon(
@@ -66,6 +69,7 @@ class _RecycleScreenState extends State<RecycleScreen> {
       ),
       title: "Clothes",
       isActive: false,
+      multiplier: 75,
     ),
     WasteCategories(
       icon: const Icon(
@@ -80,6 +84,7 @@ class _RecycleScreenState extends State<RecycleScreen> {
       ),
       title: "Technological",
       isActive: false,
+      multiplier: 30,
     ),
     WasteCategories(
       icon: const Icon(
@@ -94,9 +99,10 @@ class _RecycleScreenState extends State<RecycleScreen> {
       ),
       title: "Paper",
       isActive: false,
+      multiplier: 15,
     ),
   ];
-
+  int currentCategory = 0;
   void makeActive(int index) {
     setState(() {
       categoryItems = List<WasteCategories>.generate(
@@ -107,6 +113,7 @@ class _RecycleScreenState extends State<RecycleScreen> {
                 title: categoryItems[i].title,
                 isActive: i == index,
               ));
+      currentCategory = index;
     });
   }
 
