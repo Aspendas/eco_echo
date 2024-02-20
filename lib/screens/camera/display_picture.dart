@@ -45,7 +45,6 @@ class _DisplayPictureScreenState extends State<DisplayPictureScreen> {
   @override
   void initState() {
     super.initState();
-    print("asdf");
     textAndImageGemini();
   }
 
@@ -77,11 +76,6 @@ class _DisplayPictureScreenState extends State<DisplayPictureScreen> {
             height: 64,
           )
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: textAndImageGemini,
-        tooltip: 'Text and Image',
-        child: const Icon(Icons.text_fields),
       ),
     );
   }
