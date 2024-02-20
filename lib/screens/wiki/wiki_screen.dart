@@ -9,10 +9,10 @@ class WikiScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     List<WasteCategories> categoryItems = [
       WasteCategories(
-        icon: const Icon(
-          Icons.eco,
-          size: 24,
-          color: Color(0xff13BD04),
+        icon: Image.asset(
+          "assets/organics.png",
+          height: 24,
+          width: 24,
         ),
         title: "Organics",
       ),
