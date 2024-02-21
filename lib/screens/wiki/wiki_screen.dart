@@ -83,6 +83,7 @@ class WikiScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             return WasteCategoryItem(
               categories: categoryItems[index],
+              index: index,
             );
           },
         ),

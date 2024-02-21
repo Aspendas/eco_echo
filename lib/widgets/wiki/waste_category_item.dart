@@ -3,10 +3,12 @@ import 'package:eco_echo/screens/wiki/detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class WasteCategoryItem extends StatelessWidget {
-  const WasteCategoryItem({Key? key, required this.categories})
+  const WasteCategoryItem(
+      {Key? key, required this.categories, required this.index})
       : super(key: key);
 
   final WasteCategories categories;
+  final int index;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -15,6 +17,7 @@ class WasteCategoryItem extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) => WikiDetailScreen(
               title: categories.title,
+              index: index,
             ),
           ),
         );

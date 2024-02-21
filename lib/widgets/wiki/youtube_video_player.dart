@@ -8,6 +8,8 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 /// Homepage
 class MyHomePage extends StatefulWidget {
   @override
+  const MyHomePage({super.key, required this.videoIndex});
+  final int videoIndex;
   _MyHomePageState createState() => _MyHomePageState();
 }
 
@@ -22,13 +24,20 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _muted = false;
   bool _isPlayerReady = false;
 
-  final List<String> _ids = ['hPUHkMZTIeI'];
+  final List<String> _ids = [
+    'mDIVpJgjoXQ',
+    'Sr6DgQ18drA',
+    'HTVLXcbIzGI',
+    'yLZgrSpCAVs',
+    'eT34ypRodB0',
+    '5xrWrKIVBgo',
+  ];
 
   @override
   void initState() {
     super.initState();
     _controller = YoutubePlayerController(
-      initialVideoId: _ids.first,
+      initialVideoId: _ids[widget.videoIndex],
       flags: const YoutubePlayerFlags(
         mute: false,
         autoPlay: false,
@@ -117,153 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: ListView(
           children: [
             player,
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  _space,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.skip_previous),
-                        onPressed: _isPlayerReady
-                            ? () => _controller.load(_ids[
-                                (_ids.indexOf(_controller.metadata.videoId) -
-                                        1) %
-                                    _ids.length])
-                            : null,
-                      ),
-                      IconButton(
-                        icon: Icon(
-                          _controller.value.isPlaying
-                              ? Icons.pause
-                              : Icons.play_arrow,
-                        ),
-                        onPressed: _isPlayerReady
-                            ? () {
-                                _controller.value.isPlaying
-                                    ? _controller.pause()
-                                    : _controller.play();
-                                setState(() {});
-                              }
-                            : null,
-                      ),
-                      IconButton(
-                        icon: Icon(_muted ? Icons.volume_off : Icons.volume_up),
-                        onPressed: _isPlayerReady
-                            ? () {
-                                _muted
-                                    ? _controller.unMute()
-                                    : _controller.mute();
-                                setState(() {
-                                  _muted = !_muted;
-                                });
-                              }
-                            : null,
-                      ),
-                      FullScreenButton(
-                        controller: _controller,
-                        color: Colors.blueAccent,
-                      ),
-                      IconButton(
-                        icon: const Icon(Icons.skip_next),
-                        onPressed: _isPlayerReady
-                            ? () => _controller.load(_ids[
-                                (_ids.indexOf(_controller.metadata.videoId) +
-                                        1) %
-                                    _ids.length])
-                            : null,
-                      ),
-                    ],
-                  ),
-                  _space,
-                ],
-              ),
-            ),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget _text(String title, String value) {
-    return RichText(
-      text: TextSpan(
-        text: '$title : ',
-        style: const TextStyle(
-          color: Colors.blueAccent,
-          fontWeight: FontWeight.bold,
-        ),
-        children: [
-          TextSpan(
-            text: value,
-            style: const TextStyle(
-              color: Colors.blueAccent,
-              fontWeight: FontWeight.w300,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Color _getStateColor(PlayerState state) {
-    switch (state) {
-      case PlayerState.unknown:
-        return Colors.grey[700]!;
-      case PlayerState.unStarted:
-        return Colors.pink;
-      case PlayerState.ended:
-        return Colors.red;
-      case PlayerState.playing:
-        return Colors.blueAccent;
-      case PlayerState.paused:
-        return Colors.orange;
-      case PlayerState.buffering:
-        return Colors.yellow;
-      case PlayerState.cued:
-        return Colors.blue[900]!;
-      default:
-        return Colors.blue;
-    }
-  }
-
-  Widget get _space => const SizedBox(height: 10);
-
-  Widget _loadCueButton(String action) {
-    return Expanded(
-      child: MaterialButton(
-        color: Colors.blueAccent,
-        onPressed: _isPlayerReady
-            ? () {
-                if (_idController.text.isNotEmpty) {
-                  var id = YoutubePlayer.convertUrlToId(
-                        _idController.text,
-                      ) ??
-                      '';
-                  if (action == 'LOAD') _controller.load(id);
-                  if (action == 'CUE') _controller.cue(id);
-                  FocusScope.of(context).requestFocus(FocusNode());
-                } else {
-                  _showSnackBar('Source can\'t be empty!');
-                }
-              }
-            : null,
-        disabledColor: Colors.grey,
-        disabledTextColor: Colors.black,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 14.0),
-          child: Text(
-            action,
-            style: const TextStyle(
-              fontSize: 18.0,
-              color: Colors.white,
-              fontWeight: FontWeight.w300,
-            ),
-            textAlign: TextAlign.center,
-          ),
         ),
       ),
     );
