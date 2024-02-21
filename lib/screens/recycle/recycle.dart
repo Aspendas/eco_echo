@@ -102,7 +102,7 @@ class _RecycleScreenState extends State<RecycleScreen> {
       multiplier: 15,
     ),
   ];
-  double _currentSliderValue = 1;
+  double _currentSliderValue = 100;
   List<double> multipliers = [5.0, 1.5, 0.5, 75, 30, 15];
   int currentCategory = 0;
   void makeActive(int index) {
