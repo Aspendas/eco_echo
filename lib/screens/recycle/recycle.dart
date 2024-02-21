@@ -102,6 +102,8 @@ class _RecycleScreenState extends State<RecycleScreen> {
       multiplier: 15,
     ),
   ];
+  double _currentSliderValue = 1;
+  List<double> multipliers = [5.0, 1.5, 0.5, 75, 30, 15];
   int currentCategory = 0;
   void makeActive(int index) {
     setState(() {
@@ -141,20 +143,20 @@ class _RecycleScreenState extends State<RecycleScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "30 gr",
-                        style: TextStyle(
+                        "${_currentSliderValue.toInt()} gr",
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text(
+                      const Text(
                         "Carbon Emission",
                         style: TextStyle(
                           fontSize: 12,
@@ -166,14 +168,14 @@ class _RecycleScreenState extends State<RecycleScreen> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
-                        "0.5 gr",
-                        style: TextStyle(
+                        "${(_currentSliderValue * multipliers[currentCategory]).toInt()} gr",
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color(0xff13BD04),
                         ),
                       ),
-                      Text(
+                      const Text(
                         "Carbon emission saved",
                         style: TextStyle(
                           fontSize: 12,
@@ -184,8 +186,16 @@ class _RecycleScreenState extends State<RecycleScreen> {
                 ],
               ),
               Slider(
-                value: 1,
-                onChanged: (double value) {},
+                value: _currentSliderValue,
+                max: 1000,
+                divisions: 10,
+                activeColor: Colors.green[400],
+                label: _currentSliderValue.round().toString(),
+                onChanged: (double value) {
+                  setState(() {
+                    _currentSliderValue = value;
+                  });
+                },
               ),
               Column(
                 children: [
