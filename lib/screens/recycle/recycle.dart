@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../models/wiki/categories.dart';
 
@@ -105,6 +106,11 @@ class _RecycleScreenState extends State<RecycleScreen> {
   double _currentSliderValue = 100;
   List<double> multipliers = [5.0, 1.5, 0.5, 75, 30, 15];
   int currentCategory = 0;
+  int? calculatedEmissionValue;
+  int calculateEmission() {
+    return (_currentSliderValue * multipliers[currentCategory]).toInt();
+  }
+
   void makeActive(int index) {
     setState(() {
       categoryItems = List<WasteCategories>.generate(
@@ -122,17 +128,31 @@ class _RecycleScreenState extends State<RecycleScreen> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      shrinkWrap: true,
       children: [
-        const Padding(
-          padding: EdgeInsets.all(24.0),
+        const SizedBox(height: 20),
+        calculatedEmissionValue == null
+            ? const SizedBox()
+            : Center(
+                child: Text(
+                  "%${calculatedEmissionValue ?? ""}",
+                  style: const TextStyle(
+                      fontSize: 48,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.green),
+                ),
+              ),
+        const Center(
           child: Text(
-            "Reduced Carbon Footprint",
+            "Carbon Emission Reduced",
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
           ),
         ),
+        const SizedBox(height: 20),
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 20),
-          padding: const EdgeInsets.all(16),
+          padding:
+              const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             border: Border.all(
@@ -310,7 +330,11 @@ class _RecycleScreenState extends State<RecycleScreen> {
                             borderRadius: BorderRadius.all(Radius.circular(12)),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            calculatedEmissionValue = calculateEmission();
+                          });
+                        },
                         child: const Text('Done'),
                       )
                     ],

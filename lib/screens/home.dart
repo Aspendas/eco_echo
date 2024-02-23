@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:camera/camera.dart';
 import 'package:eco_echo/screens/camera/camera.dart';
 import 'package:eco_echo/screens/recycle/recycle.dart';

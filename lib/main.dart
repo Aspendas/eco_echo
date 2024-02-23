@@ -1,5 +1,4 @@
 import 'package:camera/camera.dart';
-import 'package:eco_echo/widgets/wiki/youtube_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:provider/provider.dart';
