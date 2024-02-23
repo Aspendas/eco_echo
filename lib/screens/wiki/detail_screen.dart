@@ -1,3 +1,4 @@
+import 'package:eco_echo/widgets/wiki/map_sample.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -45,20 +46,28 @@ class WikiDetailScreen extends StatelessWidget {
 
           var width = MediaQuery.of(context).size.width;
 
-          return ListView(
-            shrinkWrap: true,
-            children: [
-              SizedBox(
-                  width: width,
-                  height: (width * 9 / 16),
-                  child: MyHomePage(
-                    videoIndex: index,
-                  )),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(content),
-              ),
-            ],
+          return SingleChildScrollView(
+            child: Column(
+              children: [
+                ListView(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  children: [
+                    SizedBox(
+                        width: width,
+                        height: (width * 9 / 16),
+                        child: MyHomePage(
+                          videoIndex: index,
+                        )),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(content),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 300, child: MapSample())
+              ],
+            ),
           );
         },
       ),
