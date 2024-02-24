@@ -1,3 +1,4 @@
+import 'package:eco_echo/models/recycle/count.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -103,14 +104,14 @@ class _RecycleScreenState extends State<RecycleScreen> {
       multiplier: 15,
     ),
   ];
-  double _currentSliderValue = 100;
+  double _currentSliderValue = 0;
   List<double> multipliers = [5.0, 1.5, 0.5, 75, 30, 15];
   int currentCategory = 0;
-  int? calculatedEmissionValue;
-  int calculateEmission() {
-    return (_currentSliderValue * multipliers[currentCategory]).toInt();
+  calculateEmission(incrementValue) {
+    counterStorage.incrementCounter(incrementValue);
   }
 
+  CounterStorage counterStorage = CounterStorage();
   void makeActive(int index) {
     setState(() {
       categoryItems = List<WasteCategories>.generate(
@@ -131,17 +132,19 @@ class _RecycleScreenState extends State<RecycleScreen> {
       shrinkWrap: true,
       children: [
         const SizedBox(height: 20),
-        calculatedEmissionValue == null
-            ? const SizedBox()
-            : Center(
-                child: Text(
-                  "%${calculatedEmissionValue ?? ""}",
+        Center(
+          child: FutureBuilder<Object>(
+              future: counterStorage.readCounter(),
+              builder: (context, snapshot) {
+                return Text(
+                  "${snapshot.data.toString()} gram",
                   style: const TextStyle(
                       fontSize: 48,
                       fontWeight: FontWeight.bold,
                       color: Colors.green),
-                ),
-              ),
+                );
+              }),
+        ),
         const Center(
           child: Text(
             "Carbon Emission Reduced",
@@ -319,7 +322,23 @@ class _RecycleScreenState extends State<RecycleScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const SizedBox(),
+                      OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: Colors.red[600],
+                          backgroundColor: Colors.green[100],
+                          minimumSize: const Size(72, 36),
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(12)),
+                          ),
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            counterStorage.resetCounter();
+                          });
+                        },
+                        child: const Text('Reset'),
+                      ),
                       OutlinedButton(
                         style: OutlinedButton.styleFrom(
                           foregroundColor: Colors.black87,
@@ -332,11 +351,15 @@ class _RecycleScreenState extends State<RecycleScreen> {
                         ),
                         onPressed: () {
                           setState(() {
-                            calculatedEmissionValue = calculateEmission();
+                            calculateEmission((_currentSliderValue *
+                                    multipliers[currentCategory])
+                                .toInt());
+                            _currentSliderValue = 0;
+                            makeActive(0);
                           });
                         },
                         child: const Text('Done'),
-                      )
+                      ),
                     ],
                   )
                 ],
