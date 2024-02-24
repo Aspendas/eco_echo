@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 
 import '../../models/camera.dart';
 import '../camera/camera.dart';
-import 'detail_screen.dart';
 
 class WikiScreen extends StatelessWidget {
   const WikiScreen({super.key});
@@ -18,49 +17,49 @@ class WikiScreen extends StatelessWidget {
     List<WasteCategories> categoryItems = [
       WasteCategories(
         icon: Image.asset(
-          "assets/organics.png",
+          "assets/fish green.png",
           height: 24,
           width: 24,
         ),
         title: "Organics",
       ),
       WasteCategories(
-        icon: const Icon(
-          Icons.bolt,
-          size: 24,
-          color: Color(0xff13BD04),
+        icon: Image.asset(
+          "assets/bottle green.png",
+          height: 24,
+          width: 24,
         ),
         title: "Plastic",
       ),
       WasteCategories(
-        icon: const Icon(
-          Icons.local_drink,
-          size: 24,
-          color: Color(0xff13BD04),
+        icon: Image.asset(
+          "assets/glass green.png",
+          height: 24,
+          width: 24,
         ),
         title: "Glass",
       ),
       WasteCategories(
-        icon: const Icon(
-          Icons.shopping_bag,
-          size: 24,
-          color: Color(0xff13BD04),
+        icon: Image.asset(
+          "assets/clothes green.png",
+          height: 24,
+          width: 24,
         ),
         title: "Clothes",
       ),
       WasteCategories(
-        icon: const Icon(
-          Icons.tv,
-          size: 24,
-          color: Color(0xff13BD04),
+        icon: Image.asset(
+          "assets/television green.png",
+          height: 24,
+          width: 24,
         ),
         title: "Technological",
       ),
       WasteCategories(
-        icon: const Icon(
-          Icons.shopping_bag,
-          size: 24,
-          color: Color(0xff13BD04),
+        icon: Image.asset(
+          "assets/paper green.png",
+          height: 24,
+          width: 24,
         ),
         title: "Paper",
       ),

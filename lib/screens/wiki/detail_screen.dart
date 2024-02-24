@@ -65,7 +65,15 @@ class WikiDetailScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 300, child: MapSample())
+                const SizedBox(height: 12),
+                const Text(
+                  "Recycling Centers Near You:",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  height: 300,
+                  child: MapSample(),
+                ),
               ],
             ),
           );

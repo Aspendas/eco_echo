@@ -17,15 +17,89 @@ class MapSampleState extends State<MapSample> {
       Completer<GoogleMapController>();
 
   static const CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
-    zoom: 14.4746,
+    target: LatLng(
+      39.9251281,
+      32.8276288,
+    ),
+    zoom: 10,
   );
 
-  static const CameraPosition _kLake = CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(37.43296265331129, -122.08832357078792),
-      tilt: 59.440717697143555,
-      zoom: 19.151926040649414);
+  var markers = <Marker>{
+    const Marker(
+      markerId: MarkerId('Ekovar Recycling'),
+      position: LatLng(39.9283873, 32.7209444),
+    ),
+    const Marker(
+      markerId: MarkerId('Zirve Geri Donusum'),
+      position: LatLng(
+        39.9544423,
+        32.7783844,
+      ),
+    ),
+    const Marker(
+      markerId: MarkerId('Recycle Center Ankara'),
+      position: LatLng(
+        39.9544423,
+        32.7783844,
+      ),
+    ),
+    const Marker(
+      markerId: MarkerId('Pelkar Recycle'),
+      position: LatLng(
+        39.9730585,
+        32.6125515,
+      ),
+    ),
+    const Marker(
+      markerId: MarkerId('Hak Metal Recycle'),
+      position: LatLng(
+        39.9593191,
+        32.731822,
+      ),
+    ),
+    const Marker(
+      markerId: MarkerId('Tugra Recycle'),
+      position: LatLng(
+        39.9593191,
+        32.731822,
+      ),
+    ),
+    const Marker(
+      markerId: MarkerId('Kor Plast Recycle'),
+      position: LatLng(
+        39.9711917,
+        32.7049218,
+      ),
+    ),
+    const Marker(
+      markerId: MarkerId('ATABEY Recycle'),
+      position: LatLng(
+        39.9711917,
+        32.7049218,
+      ),
+    ),
+    const Marker(
+      markerId: MarkerId('MORKAYA Recycle'),
+      position: LatLng(
+        39.9711917,
+        32.7049218,
+      ),
+    ),
+    const Marker(
+      markerId: MarkerId('MElemental Geri Dönüşüm - Ankara Bölge Ofisi'),
+      position: LatLng(
+        39.9711917,
+        32.7049218,
+      ),
+    ),
+    const Marker(
+      markerId: MarkerId('TUNSA'),
+      position: LatLng(
+        39.9684009,
+        32.7034652,
+      ),
+    ),
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -35,21 +109,12 @@ class MapSampleState extends State<MapSample> {
           () => EagerGestureRecognizer(),
         ),
       },
+      markers: markers,
       mapType: MapType.normal,
       initialCameraPosition: _kGooglePlex,
       onMapCreated: (GoogleMapController controller) {
         _controller.complete(controller);
       },
     );
-    // floatingActionButton: FloatingActionButton.extended(
-    //   onPressed: _goToTheLake,
-    //   label: const Text('To the lake!'),
-    //   icon: const Icon(Icons.directions_boat),
-    // ),
-  }
-
-  Future<void> _goToTheLake() async {
-    final GoogleMapController controller = await _controller.future;
-    await controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
   }
 }

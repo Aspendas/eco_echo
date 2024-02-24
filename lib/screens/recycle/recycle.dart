@@ -13,10 +13,10 @@ class RecycleScreen extends StatefulWidget {
 class _RecycleScreenState extends State<RecycleScreen> {
   List<WasteCategories> categoryItems = [
     WasteCategories(
-      icon: const Icon(
-        Icons.eco,
-        size: 24,
-        color: Color(0xff13BD04),
+      icon: Image.asset(
+        "assets/fish green.png",
+        height: 24,
+        width: 24,
       ),
       iconActive: const Icon(
         Icons.eco,

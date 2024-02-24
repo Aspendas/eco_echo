@@ -46,7 +46,10 @@ class CameraScreenState extends State<CameraScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Take a picture')),
+      appBar: AppBar(
+        title: const Text('Take a picture'),
+        backgroundColor: const Color.fromRGBO(191, 216, 175, 1),
+      ),
       // You must wait until the controller is initialized before displaying the
       // camera preview. Use a FutureBuilder to display a loading spinner until the
       // controller has finished initializing.
@@ -92,6 +95,7 @@ class CameraScreenState extends State<CameraScreen> {
             log(e.toString());
           }
         },
+        backgroundColor: const Color.fromRGBO(191, 216, 175, 1),
         child: const Icon(Icons.camera_alt),
       ),
     );

@@ -41,12 +41,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
-          "Eco Echo",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
-          ),
+        title: Image.asset(
+          "assets/logo.png",
+          height: 30,
         ),
         backgroundColor: const Color.fromRGBO(191, 216, 175, 1),
       ),
