@@ -1,16 +1,52 @@
-# eco_echo
+# What is Eco Echo?
+A project that helps people to recycle and reuse easier using Gemini API for GDSC Solution Challenge
 
-A new Flutter project.
+## 🖥️ Installation
 
-## Getting Started
+This installation guide assumes that you already have Flutter installed on your computer if not install [Flutter](https://docs.flutter.dev/get-started/install) here.
 
-This project is a starting point for a Flutter application.
+Open [EcoEcho](https://github.com/Aspendas/eco_echo) project on GitHub.
 
-A few resources to get you started if this is your first Flutter project:
+Step 1: Click the Code button and then click Download ZIP. 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Step 2: After downloading the zip file, extract it using Winrar or ZIP.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Step 3: Go to your preferred code editor and open the file you extracted before.
+
+Step 4: Get your Gemini API key from [Google AI Studio](https://aistudio.google.com/)
+
+Step 5: Create a .dart file in the lib folder name config.dart and paste (var apiKey = "YOUR_API_KEY_GOES_HERE";)
+
+Step 6: run pub get command in the terminal.
+```bash
+pub get
+```
+
+Step 7: Under the lib folder open the main.dart file and run the app with emulator, simulator or real device.
+
+## 🚀 Project Aim
+
+EcoEcho aims to revolutionize recycling and reusing practices by leveraging Google's Gemini API to provide users with a seamless and intuitive platform. By harnessing the power of artificial intelligence and machine learning, EcoEcho empowers individuals to make environmentally conscious decisions, ultimately contributing to a greener and more sustainable planet.
+
+## 🎯 Targeted UN SDG’s
+
+<div style="display: flex;">
+<img src="https://github.com/Aspendas/eco_echo/tree/main/assets/12.svg?raw=true" alt="SDG 12" width="300" height="300">
+<img src="https://github.com/Aspendas/eco_echo/tree/main/assets/13.svg?raw=true" alt="SDG 13" width="300" height="300">
+<img src="https://github.com/Aspendas/eco_echo/tree/main/assets/14.svg?raw=true" alt="SDG 14" width="300" height="300">
+<img src="https://github.com/Aspendas/eco_echo/tree/main/assets/15.svg?raw=true" alt="SDG 15" width="300" height="300">
+</div>
+
+## 📖 Features
+
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
