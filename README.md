@@ -15,7 +15,10 @@ Step 3: Go to your preferred code editor and open the file you extracted before.
 
 Step 4: Get your Gemini API key from [Google AI Studio](https://aistudio.google.com/)
 
-Step 5: Create a .dart file in the lib folder name config.dart and paste (var apiKey = "YOUR_API_KEY_GOES_HERE";)
+Step 5: Create a .dart file in the lib folder name config.dart and paste
+```bash
+var apiKey = "YOUR_API_KEY_GOES_HERE";
+```
 
 Step 6: run pub get command in the terminal.
 ```bash
