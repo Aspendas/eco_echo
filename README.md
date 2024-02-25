@@ -31,10 +31,10 @@ EcoEcho aims to revolutionize recycling and reusing practices by leveraging Goog
 ## 🎯 Targeted UN SDG’s
 
 <div style="display: flex;">
-<img src="https://github.com/Aspendas/eco_echo/blob/main/assets/12.svg" alt="SDG 12" width="300" height="300">
-<img src="https://github.com/Aspendas/eco_echo/blob/main/assets/13.svg" alt="SDG 13" width="300" height="300">
-<img src="https://github.com/Aspendas/eco_echo/blob/main/assets/14.svg" alt="SDG 14" width="300" height="300">
-<img src="https://github.com/Aspendas/eco_echo/blob/main/assets/15.svg" alt="SDG 15" width="300" height="300">
+<img src="https://github.com/Aspendas/eco_echo/blob/main/assets/12.svg" alt="SDG 12" width="250" height="250">
+<img src="https://github.com/Aspendas/eco_echo/blob/main/assets/13.svg" alt="SDG 13" width="250" height="250">
+<img src="https://github.com/Aspendas/eco_echo/blob/main/assets/14.svg" alt="SDG 14" width="250" height="250">
+<img src="https://github.com/Aspendas/eco_echo/blob/main/assets/15.svg" alt="SDG 15" width="250" height="250">
 </div>
 
 ## 📖 Features
