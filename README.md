@@ -42,6 +42,19 @@ EcoEcho aims to revolutionize recycling and reusing practices by leveraging Goog
 
 ## 📖 Features
 
+Our application offers a comprehensive set of features designed to empower users to actively participate in recycling and adopt sustainable practices. Here are some key features:
+
+1. Object Detection: Utilize advanced object detection powered by Gemini API to identify recyclable items through your device's camera.
+
+2. Educational Content: Access a rich repository of educational materials covering recycling best practices, environmental conservation tips, and sustainability insights.
+
+3. CO2 Calculator: Track and calculate your carbon footprint reduction by engaging in recycling activities and making environmentally conscious choices.
+
+4. DIY Videos: Explore a collection of do-it-yourself (DIY) videos demonstrating creative ways to repurpose waste materials and reduce reliance on single-use items.
+
+5. Google Maps Integration: Seamlessly navigate to nearby recycling centers and access information on recycling facilities' locations, operating hours, and accepted materials.
+
+Our application is continuously evolving, with new features and updates being regularly added to enhance the user experience and promote positive environmental change.
 
 ## Contributing
 
